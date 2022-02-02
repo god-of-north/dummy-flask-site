@@ -1,6 +1,8 @@
 python run_for_test.py &
 serverPID=$!
 
+sleep 5
+
 curl -XGET http://localhost:5000/ > out.txt
 
 case `grep -Fx "Hello AWS!!!" "out.txt" >/dev/null; echo $?` in
