@@ -11,10 +11,12 @@ case `grep -Fx "Hello AWS!!!" "out.txt" >/dev/null; echo $?` in
   1)
     # code if not found
     echo "Test result: FAILED!"
+    exit 1
     ;;
   *)
     # code if an error occurred
     echo "Test result: FAILED!"
+    exit 2
     ;;
 esac
 
